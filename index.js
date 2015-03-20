@@ -1,7 +1,7 @@
 var express = require('express');
 var _ = require('underscore');
 var fs = require("fs");
-var exec = require("child_process");
+var exec = require("child_process").exec;
 
 var app = express();
 app.enable('trust proxy');
@@ -31,7 +31,13 @@ app.get('/:clientID', function(req, res) {
 				}
 			}); 
 
-			exec("sudo service nginx reload");
+			exec("sudo service nginx reload", function (error, stdout, stderr) {
+				console.log('stdout: ' + stdout);
+				console.log('stderr: ' + stderr);
+				if (error !== null) {
+					console.log('exec error: ' + error);
+				}
+			});
 
 		});
 
