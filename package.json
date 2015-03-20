@@ -1,0 +1,14 @@
+{
+  "name": "node_dyn_dns",
+  "version": "0.0.1",
+  "description": "This is a simple node utility for writing a reverse proxy for nginx based on a request IP.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
